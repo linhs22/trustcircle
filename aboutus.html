@@ -14,14 +14,56 @@
                 <div class="flex items-center">
                     <span class="text-xl font-bold text-indigo-600">TrustCircle</span>
                 </div>
+                
+                <!-- Hamburger button -->
+                <button id="menuButton" class="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+    
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
                     <a href="./aboutus.html" class="text-gray-600 hover:text-gray-900">About Us</a>
                     <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Join Now</button>
                 </div>
             </div>
+    
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Home</a>
+                    <a href="./aboutus.html" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">About Us</a>
+                    <button class="w-full text-left px-3 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">Join Now</button>
+                </div>
+            </div>
         </div>
     </nav>
+    
+    <script>
+        // JavaScript to toggle mobile menu
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    
+        // Close mobile menu when window is resized to desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // 768px is Tailwind's md breakpoint
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
 
     <!-- Hero Section -->
     <div class="relative bg-white pt-16">
@@ -139,7 +181,10 @@
                     <img src="/api/placeholder/150/150" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4">
                     <h3 class="text-xl font-medium text-gray-900 text-center">Henry Lin</h3>
                     <p class="text-indigo-600 text-center mb-3">Founder</p>
-                    <p class="text-gray-500 text-center">Previously led product teams at major tech companies, passionate about building trust-based communities.</p>
+                    <p class="text-gray-500 text-center">I have held various roled in strategy and operations for startups, digital media, and Fortune 500 companies. My yearn 
+                        for entrepreneurship started at a young age frrom working in two family business. I've always loved connecting with people and learning more about them,
+                        so start TrustCircle is the perfect intersection of that: business that connects people.
+                    </p>
                 </div>
                 <!-- Team Member 2 -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
