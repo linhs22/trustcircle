@@ -6,9 +6,36 @@
     <title>TrustCircle | Authentic Product Reviews from Friends</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"><script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TCMNWf'></script>
     <script type="text/javascript">
-        document.querySelector('.klaviyo_form_trigger').addEventListener('click', function (){
-            window._klOnsite = window._klOnsite || []; 
-            window._klOnsite.push(['openForm', 'QTxSaX']);
+        document.addEventListener('DOMContentLoaded', function() {
+            const triggers = document.querySelectorAll('.klaviyo_form_trigger');
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    window._klOnsite = window._klOnsite || []; 
+                    window._klOnsite.openForm('QTxSaX');
+                });
+            });
+
+            // Mobile menu functionality
+            const menuButton = document.getElementById('menuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Close mobile menu when window is resized to desktop view
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) { // 768px is Tailwind's md breakpoint
+                    mobileMenu.classList.add('hidden');
+                }
+            });
         });
     </script>
 </head>
