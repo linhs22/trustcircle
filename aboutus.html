@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | TrustCircle</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"><script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TCMNWf'></script>
+    <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TCMNWf'></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             const triggers = document.querySelectorAll('.klaviyo_form_trigger');
@@ -69,35 +69,12 @@
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Home</a>
                     <a href="./aboutus.html" class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">About Us</a>
-                    <button class="w-full text-left px-3 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">Join Now</button>
+                    <button class="klaviyo_form_trigger w-full text-left px-3 py-2 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md">Join Now</button>
                 </div>
             </div>
         </div>
     </nav>
-    
-    <script>
-        // JavaScript to toggle mobile menu
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-    
-        // Close mobile menu when window is resized to desktop view
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) { // 768px is Tailwind's md breakpoint
-                mobileMenu.classList.add('hidden');
-            }
-        });
-    </script>
+
 
     <!-- Hero Section -->
     <div class="relative bg-white pt-16">
